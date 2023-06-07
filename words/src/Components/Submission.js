@@ -1,43 +1,45 @@
 import React, { useState } from 'react';
 
 const Submission = () => {
-  const [quoteText, setQuoteText] = useState('');
-  const [quoteAuthor, setQuoteAuthor] = useState('');
+  const [quote, setQuote] = useState('');
+  const [author, setAuthor] = useState('');
+  const [newQuote, setNewQuote] = useState('');
+  const [newAuthor, setNewAuthor] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const quote = {
-      text: quoteText,
-      author: quoteAuthor
-    };
-    // Perform necessary actions with the quote data, such as saving or displaying it
-    console.log(quote);
-    setQuoteText('');
-    setQuoteAuthor('');
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setQuote(newQuote);
+    setAuthor(newAuthor);
+    setNewQuote('');
+    setNewAuthor('');
   };
 
   return (
     <div>
-      <h2>Submit a Quote</h2>
+      <h1>Random Quote</h1>
+      <p>{quote}</p>
+      <p>- {author}</p>
+
       <form onSubmit={handleSubmit}>
         <label>
           Quote:
-          <textarea
-            value={quoteText}
-            onChange={(e) => setQuoteText(e.target.value)}
-            required
+          <input
+            type="text"
+            value={newQuote}
+            onChange={(event) => setNewQuote(event.target.value)}
           />
         </label>
+        <br />
         <label>
           Author:
           <input
             type="text"
-            value={quoteAuthor}
-            onChange={(e) => setQuoteAuthor(e.target.value)}
-            required
+            value={newAuthor}
+            onChange={(event) => setNewAuthor(event.target.value)}
           />
         </label>
-        <button type="submit">Submit Quote</button>
+        <br />
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
