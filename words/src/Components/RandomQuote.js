@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Quote from './Quote';
 
 const RandomQuote = () => {
-  const [quote, setQuote] = useState(null);
+  const [quotes, setQuotes] = useState([]);
 
   useEffect(() => {
-    fetchQuote();
+    fetchQuotes();
   }, []);
 
-  const fetchQuote = async () => {
+  const fetchQuotes = async () => {
     try {
-      const response = await fetch('http://localhost:9292/pat');
+      const response = await fetch('http://localhost:9292/quotes');
       const data = await response.json();
-      setQuote(data);
+      setQuotes(data);
     } catch (error) {
       console.log(error);
     }
@@ -20,13 +20,14 @@ const RandomQuote = () => {
 
   return (
     <div>
-      <h2>Random Quote</h2>
-      {quote ? (
-        <Quote quote={quote} />
+      <h2>Random Quotes</h2>
+      {quotes.length > 0 ? (
+        quotes.map((quote, index) => (
+          <Quote key={index} quote={quote} />
+        ))
       ) : (
-        <p>Loading quote...</p>
+        <p>Loading quotes...</p>
       )}
-      <button onClick={fetchQuote}>Get New Quote</button>
     </div>
   );
 };

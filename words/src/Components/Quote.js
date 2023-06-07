@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 const Quote = () => {
-  const [quote, setQuote] = useState('');
-  const [author, setAuthor] = useState('');
+  const [quotes, setQuotes] = useState([]);
 
   useEffect(() => {
-    fetchQuote();
+    fetchQuotes();
   }, []);
 
-  const fetchQuote = async () => {
+  const fetchQuotes = async () => {
     try {
       const response = await fetch('http://localhost:9292/pet'); // Replace with your quote API endpoint
       const data = await response.json();
-      setQuote(data.quote);
-      setAuthor(data.author);
+      setQuotes(data);
     } catch (error) {
       console.log(error);
     }
@@ -21,10 +19,13 @@ const Quote = () => {
 
   return (
     <div>
-      <h1>Random Quote</h1>
-      <p>{quote}</p>
-      <p>- {author}</p>
-      <button onClick={fetchQuote}>New Quote</button>
+      <h1>Quotes</h1>
+      {quotes.map((quote, index) => (
+        <div key={index}>
+          <p>{quote.content}</p>
+          <p>- {quote.author}</p>
+        </div>
+      ))}
     </div>
   );
 };

@@ -16,7 +16,7 @@ const Submission = () => {
 
   return (
     <div>
-      <h1>Random Quote</h1>
+      <h1>Submission</h1>
       <p>{quote}</p>
       <p>- {author}</p>
 

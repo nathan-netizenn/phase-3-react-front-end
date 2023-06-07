@@ -20,13 +20,13 @@ body {
 }
 
 .header h1 {
-  font-size: 24px;
+  font-size: 19px;
   color: #333;
 }
 
 /* Quote styles */
 .quote {
-  background-color: #f9f9f9;
+  background-color: #2333c0;
   padding: 20px;
   margin-bottom: 20px;
 }
