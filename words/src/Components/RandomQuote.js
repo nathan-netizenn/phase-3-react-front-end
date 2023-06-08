@@ -1,35 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import Quote from './Quote';
+import React, { useEffect, useState } from 'react';
 
-const RandomQuote = () => {
+function RandomQuote() {
   const [quotes, setQuotes] = useState([]);
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
 
   useEffect(() => {
-    fetchQuotes();
+    fetch('http://localhost:9292/pat')
+      .then((res) => res.json())
+      .then((data) => setQuotes(data))
+      .catch((error) => console.warn(error));
   }, []);
 
-  const fetchQuotes = async () => {
-    try {
-      const response = await fetch('http://localhost:9292/quotes');
-      const data = await response.json();
-      setQuotes(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  function handleNextQuote() {
+    setCurrentQuoteIndex((prevIndex) => {
+      const nextIndex = prevIndex + 1;
+      if (nextIndex >= quotes.length) {
+       
+        return 0;
+      }
+      return nextIndex;
+    });
+  }
 
   return (
-    <div>
-      <h2>Random Quotes</h2>
-      {quotes.length > 0 ? (
-        quotes.map((quote, index) => (
-          <Quote key={index} quote={quote} />
-        ))
-      ) : (
-        <p>Loading quotes...</p>
+    <div className='next'>
+      {quotes.length > 0 && (
+        <div key={quotes[currentQuoteIndex].id}>
+          <p>{quotes[currentQuoteIndex].quoter}</p>
+          <button onClick={handleNextQuote}>Next</button>
+        </div>
       )}
     </div>
   );
-};
+}
 
 export default RandomQuote;
