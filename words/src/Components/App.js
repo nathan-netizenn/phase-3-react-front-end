@@ -7,7 +7,7 @@ export default function App() {
     <div>
       <h1>Quote</h1>
       <Quote />
-      <h2>Random</h2>
+      
       <RandomQuote />
       <Submission />
     </div>

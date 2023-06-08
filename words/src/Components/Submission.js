@@ -15,7 +15,7 @@ const Submission = () => {
   };
 
   return (
-    <div className='submit'>
+    <div className='bet'>
       <h1>Submission</h1>
       <p>{quote}</p>
       <p>- {author}</p>

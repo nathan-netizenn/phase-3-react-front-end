@@ -32,7 +32,7 @@ function Quote() {
   }
 
   return (
-    <div className='quote'>
+    <div className='box'>
       <input
         type="text"
         value={newQuote}
