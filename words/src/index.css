@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color:rgba(131, 208, 101, 0.933) ;
+  background-color:rgb(39, 62, 5) ;
   background-color:jungle green;
   background-repeat: no-repeat;
   background-size: cover;
@@ -80,7 +80,7 @@ body {
 }
 .box{
   width: 20%;
-  background-color: #2ee6e6;
+  background-color: #2d329e;
 
 }
 .con{
