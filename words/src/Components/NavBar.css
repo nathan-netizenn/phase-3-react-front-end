@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #16b1b9;
+    background-color: #17ded4;
     color: #0c0b0b;
     height: 60px; /* Adjust the height as desired */
   }
@@ -19,9 +19,9 @@
   }
   
   .nav-links li a {
-    color: #fff;
+    color: #090808;
     text-decoration: none;
-    font-size: 18px; /* Adjust the font size as desired */
+    font-size: 10px; /* Adjust the font size as desired */
   }
   
   .nav-links li a:hover {

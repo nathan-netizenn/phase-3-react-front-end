@@ -1,5 +1,5 @@
 # Name of the Project
-
+Words of Wisdom.
 ### Author : Name Date
 Nathan Mageka june 11 2023
 ## Project Description
