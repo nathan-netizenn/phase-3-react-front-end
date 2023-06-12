@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color:rgb(23, 151, 168) ;
+  background-color:rgb(164, 185, 28) ;
   background-color:jungle green;
   background-repeat: no-repeat;
   background-size: cover;
@@ -84,14 +84,14 @@ body {
 
 }
 .con{
-  background-color: rgb(71, 187, 29);
+  background-color: rgb(187, 29, 34);
   width: 20%;
   margin-left: 400px;
-  margin-top: -7500px;
+  margin-top: -10px;
 }
 .bet{
-  margin-left: 800px;
-  margin-top: -150px;
+  margin-left: 400px;
+  margin-top: -10px;
 }
 .hed{
   margin-left: 400px;

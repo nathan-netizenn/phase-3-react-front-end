@@ -24,7 +24,6 @@ function RandomQuote() {
 
   return (
     <div className='con'>
-      <h2>Random</h2>
       {quotes.length > 0 && (
         <div key={quotes[currentQuoteIndex].id}>
           <p>{quotes[currentQuoteIndex].quoter}</p>

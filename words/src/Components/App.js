@@ -1,16 +1,28 @@
-import React from 'react'
-import Quote from './Quote'
-import RandomQuote from './RandomQuote'
-import Submission from './Submission'
-export default function App() {
+import React from 'react';
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Quote from './Quote';
+import RandomQuote from './RandomQuote';
+import Submission from './Submission';
+import NavBar from './NavBar';
+
+function App() {
   return (
-    <div>
-      <h1>WORDS OF WISDOM</h1>
-      <h2>Quote</h2>
-      <Quote />
+   <Router>
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/About" element={<About/>} />
+      <Route path="/Quote" element={<Quote />} />
+      <Route path="/RandomQuote" element={<RandomQuote />} />
+      <Route path="/Submission" element={<Submission />} />
+
       
-      <RandomQuote />
-      <Submission />
-    </div>
-  )
-}
+      
+    </Routes>
+    </Router>
+  );
+};
+
+export default App;
